@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Ein kleines Rätsel für dich</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Wer sind diese Begleiter?</h1>
+        <div class="gallery">
+            <img src="bild1.jpg" alt="Sidekick 1">
+            <img src="bild2.jpg" alt="Sidekick 2">
+            </div>
+
+        <div id="quiz-section">
+            <p>Was haben alle diese Charaktere gemeinsam? (Lösungswort)</p>
+            <input type="text" id="answerInput" placeholder="Dein Lösungswort...">
+            <button onclick="checkAnswer()">Prüfen</button>
+        </div>
+
+        <div id="result" style="display: none;">
+            <h2>Gratulation! Du hast es gelöst!</h2>
+            <p>Dein Geschenk ist das Buch: <strong>Sidekick</strong> (frisch vorbestellt!)</p>
+            <img src="buch_cover.jpg" alt="Sidekick Buch">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

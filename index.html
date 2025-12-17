@@ -2,29 +2,32 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Ein kleines Rätsel für dich</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weihnachtsrätsel für Bert</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Wer sind diese Begleiter?</h1>
-        <div class="gallery">
-            <img src="bild1.jpg" alt="Sidekick 1">
-            <img src="bild2.jpg" alt="Sidekick 2">
-            </div>
 
+    <div class="container">
         <div id="quiz-section">
-            <p>Was haben alle diese Charaktere gemeinsam? (Lösungswort)</p>
+            <h2>Bert, da du so gerne Rätsel magst gibt es ein kleines Weihnachtsrätsel für dich!</h2>
+            <p>Gib einfach deine Lösung hier drunter ein und solltest du nicht weiter wissen, klicke auf den Tipp-Button.</p>
+
             <input type="text" id="answerInput" placeholder="Dein Lösungswort...">
             <button onclick="checkAnswer()">Prüfen</button>
+
+            <button class="hint-btn" onclick="nextHint()">Tipp anzeigen</button>
+            <div id="hints-container" style="margin-top: 15px; text-align: left;"></div>
         </div>
 
         <div id="result" style="display: none;">
-            <h2>Gratulation! Du hast es gelöst!</h2>
-            <p>Dein Geschenk ist das Buch: <strong>Sidekick</strong> (frisch vorbestellt!)</p>
-            <img src="buch_cover.jpg" alt="Sidekick Buch">
+            <h2>Gratulation Bert! 🥳</h2>
+            <h3>Du hast es gelöst! 🎉</h3>
+            <p>Dein Geschenk ist natürlich das Buch: <strong>Sidekick</strong> (frisch vorbestellt!)</p>
+            <img src="cover.png" alt="Sidekick Buch">
         </div>
-    </div>
+        </div>
+
     <script src="script.js"></script>
 </body>
 </html>

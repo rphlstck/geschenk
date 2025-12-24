@@ -29,6 +29,32 @@
                 <button class="bonus-btn" onclick="openBonus()">Bonus Rätsel</button>
             </div>
         </div>
+
+        <!-- Verschobene Bonus-Sektion (wird initial verborgen) -->
+        <div id="bonus-section" style="display: none; margin-top: 15px;">
+            <h2>Bonus Rätsel</h2>
+            <p>Schau dir die beiden Bilder an:</p>
+            <div class="bonus-gallery">
+                <img src="marokko.JPG" alt="Marokko Bild">
+                <img src="bird.jpg" alt="Vogel Bild">
+            </div>
+
+            <div style="margin-top:10px; text-align:left;">
+                <button class="hint-btn" onclick="nextBonusHint()">Tipp anzeigen</button>
+                <div id="bonus-hints-container" style="margin-top:10px;"></div>
+            </div>
+
+            <div style="margin-top:15px;">
+                <button onclick="closeBonus()">Zurück</button>
+            </div>
+
+            <div style="margin-top: 20px; text-align: left;">
+              <label for="bonusAnswer"><strong>Bonus-Wort eingeben:</strong></label>
+              <input id="bonusAnswer" type="text" placeholder="Gib das Bonus-Wort ein..." onkeydown="if(event.key==='Enter'){ checkBonusAnswer(); }">
+              <button onclick="checkBonusAnswer()">Absenden</button>
+              <div id="bonusResult" style="display: none; margin-top:10px;"></div>
+            </div>
+        </div>
         </div>
 
     <script src="script.js"></script>

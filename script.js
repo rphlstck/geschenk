@@ -40,3 +40,8 @@ function checkAnswer() {
         alert("Leider falsch, versuch es nochmal!");
     }
 }
+
+function openBonus() {
+    // Öffnet die Bonus-Seite in einem neuen Tab
+    window.open('bonus.html', '_blank');
+}

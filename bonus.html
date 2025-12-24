@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bonus Rätsel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Bonus Rätsel</h2>
+    <p>Schau dir die beiden Bilder an:</p>
+    <div class="bonus-gallery">
+      <img src="marokko.JPG" alt="Marokko Bild">
+      <img src="bird.jpg" alt="Vogel Bild">
+    </div>
+
+    <div style="margin-top:10px; text-align: left;">
+      <button class="hint-btn" onclick="nextBonusHint()">Tipp anzeigen</button>
+      <div id="bonus-hints-container" style="margin-top:10px; text-align: left;"></div>
+    </div>
+
+    <div style="margin-top:15px;">
+      <button onclick="window.location.href='index.html'">Zurück</button>
+    </div>
+
+    <!-- Bonus Eingabe -->
+    <div style="margin-top: 20px; text-align: left;">
+      <label for="bonusAnswer"><strong>Bonus-Wort eingeben:</strong></label>
+      <input id="bonusAnswer" type="text" placeholder="Gib das Bonus-Wort ein..." onkeydown="if(event.key==='Enter'){ checkBonusAnswer(); }">
+      <button onclick="checkBonusAnswer()">Absenden</button>
+      <div id="bonusResult" style="display: none; margin-top:10px;"></div>
+    </div>
+
+  </div>
+
+  <script>
+    // Funktion steht bereit, wenn wir später Verhalten beim Öffnen in neuem Tab ergänzen wollen
+    function closeIfCan() {
+      if (window.opener) {
+        window.close();
+      }
+    }
+
+    // Platzhalter-Tipps für das Bonus-Rätsel
+    const bonusHints = [
+      "Tipp 1: 🤏",
+      "Tipp 2: 🪽",
+      "Tipp 3: Es handelt sich um ein Mobile Game. 🎮"
+    ];
+    let currentBonusHintIndex = 0;
+
+    function nextBonusHint() {
+      const container = document.getElementById('bonus-hints-container');
+      if (currentBonusHintIndex < bonusHints.length) {
+        const newHint = document.createElement('p');
+        newHint.innerText = bonusHints[currentBonusHintIndex];
+        newHint.className = 'individual-hint';
+        container.appendChild(newHint);
+        currentBonusHintIndex++;
+      }
+    }
+
+    function checkBonusAnswer() {
+      const raw = document.getElementById('bonusAnswer').value.toLowerCase().trim();
+      const normalized = raw.replace(/\s+/g, '');
+      const isCorrect = raw === 'tiny wings' || normalized === 'tinywings';
+
+      const resultEl = document.getElementById('bonusResult');
+      if (isCorrect) {
+        resultEl.innerHTML = '<h3>Richtig! 🎉</h3><p>Das Bonus-Wort lautet <strong>tiny wings</strong>. Gut gemacht! Schicke deinem Bert auf WhatsApp das Wort "TinyWingsAppStore" um das Spiel zu erhalten.</p>';
+        resultEl.style.display = 'block';
+      } else if (raw === '') {
+        resultEl.innerHTML = '<p style="color:#d9534f; font-weight:bold;">Bitte gib zuerst ein Wort ein.</p>';
+        resultEl.style.display = 'block';
+      } else {
+        resultEl.innerHTML = '<p style="color:#d9534f; font-weight:bold;">Leider falsch, versuche es nochmal!</p>';
+        resultEl.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

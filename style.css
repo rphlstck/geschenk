@@ -50,6 +50,26 @@ button:hover {
     margin-top: 15px;
 }
 
+.bonus-btn {
+    background-color: #28a745;
+    margin-top: 10px;
+}
+
+.bonus-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.bonus-gallery img {
+    max-width: 45%;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
 #hint-text {
     margin-top: 15px;
     font-style: italic;
